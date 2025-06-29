@@ -36,13 +36,37 @@ So everyone can write a interface, PLEASE, HELP YOURSELF.
 
  `add`: Add or update an SSH entry with name, IP, username, authentication mode, and credentials.
 
+The auth mode have three types, password, RSA, and both.
+
+You need to input the RSA code just the same as the password.
+
+This is the most complicated method of all the methods.
+
+If you want to auth with password:
+
 ```bash
 ssh_cli add myserver 192.168.1.10 user --password mypass --auth password
 ```
 
-the auth mode have three types, password, RSA, and both.
 
-You need to input the RSA code just the same as the password.
+
+If you want to use RSA without password
+
+```bash
+ssh_cli add myserver 192.168.1.10 user --rsa myrsa --auth rsa
+```
+
+
+
+If you want to use both
+
+```bash
+ssh_cli add myserver 192.168.1.10 user --password mypass --rsa myrsa --auth both
+```
+
+
+
+
 
 `remove`: Remove an SSH entry by name.
 
