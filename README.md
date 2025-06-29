@@ -1,7 +1,11 @@
 # ssh CLI for terminal
 ssh CLI for terminals. Maybe a application later......
 
-for now I want to write this thing with rust.
+Why?
+
+The termius try to charge me for 10$ just for sync! And I can not even get my data export due to what they called security reasons!
+
+So now I want to write this thing with rust.
 
 Below are what I think.
 
@@ -17,6 +21,8 @@ Nah.
 maybe a interface, and a portable server?
 
 I'm not good at web and anything about interface.
+
+So everyone can write a interface, PLEASE, HELP YOURSELF.
 
 # Modules
 
