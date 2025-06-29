@@ -17,3 +17,68 @@ Nah.
 maybe a interface, and a portable server?
 
 I'm not good at web and anything about interface.
+
+# Modules
+
+`config`: Handles configuration management and entry encoding.
+
+`ssh_client`: Manages SSH connections.
+
+`sync`: Handles synchronization logic.
+
+# How to use
+
+ `add`: Add or update an SSH entry with name, IP, username, authentication mode, and credentials.
+
+```bash
+ssh_cli add myserver 192.168.1.10 user --password mypass --auth password
+```
+
+the auth mode have three types, password, RSA, and both.
+
+You need to input the RSA code just the same as the password.
+
+`remove`: Remove an SSH entry by name.
+
+```bash
+Ssh_cli remove myserver
+```
+
+`list`: List all stored SSH entries.
+
+```bash
+ssh_cli list
+```
+
+`connect`: Connect to a host using a stored entry.
+
+```bash
+ssh_cli connect myserver
+```
+
+`export`: Export the configuration to a specified file path.
+
+```bash
+ssh_cli export backup.json
+```
+
+`import`: Import configuration from a specified file path.
+
+```bash
+ssh_cli import backup.json
+```
+
+`sync-send`: Send the configuration to a target IP for synchronization.
+
+```bash
+ssh_cli sync-send 192.168.1.20
+```
+
+`sync-recv`: Receive configuration from another device (blocks until received).
+
+```bash
+ssh_cli sync-recv
+```
+
+
+

@@ -1,3 +1,50 @@
+/// Cross‑platform SSH CLI application.
+///
+/// This application provides a command-line interface for managing SSH connection entries,
+/// supporting multiple authentication modes, configuration import/export, and synchronization
+/// between devices. The main features include:
+///
+/// - Adding, updating, removing, and listing SSH entries
+/// - Connecting to SSH hosts using stored credentials
+/// - Exporting and importing configuration files
+/// - Synchronizing configuration with other devices over the network
+///
+/// # Commands
+///
+/// - `add`: Add or update an SSH entry with name, IP, username, authentication mode, and credentials.
+/// - `remove`: Remove an SSH entry by name.
+/// - `list`: List all stored SSH entries.
+/// - `connect`: Connect to a host using a stored entry.
+/// - `export`: Export the configuration to a specified file path.
+/// - `import`: Import configuration from a specified file path.
+/// - `sync-send`: Send the configuration to a target IP for synchronization.
+/// - `sync-recv`: Receive configuration from another device (blocks until received).
+///
+/// # Usage
+///
+/// Run the application with the desired subcommand and arguments. For example:
+///
+/// ```sh
+/// ssh_cli add myserver 192.168.1.10 user --password mypass --auth password
+/// ssh_cli list
+/// ssh_cli connect myserver
+/// ssh_cli export backup.json
+/// ssh_cli import backup.json
+/// ssh_cli sync-send 192.168.1.20
+/// ssh_cli sync-recv
+/// ```
+///
+/// # Errors
+///
+/// Returns an error if configuration cannot be loaded, saved, or if invalid arguments are provided.
+///
+/// # Modules
+///
+/// - `config`: Handles configuration management and entry encoding.
+/// - `ssh_client`: Manages SSH connections.
+/// - `sync`: Handles synchronization logic.
+
+
 mod config;
 mod ssh_client;
 mod sync;
