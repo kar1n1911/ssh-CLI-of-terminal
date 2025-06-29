@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "name": "myserver",
+      "ip": "192.168.0.10",
+      "username": "user",
+      "password": "cGFzc3dk",
+      "rsa_key": null,
+      "auth_mode": "password"
+    }
+  ]
+}

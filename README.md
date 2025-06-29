@@ -24,6 +24,21 @@ I'm not good at web and anything about interface.
 
 So everyone can write a interface, PLEASE, HELP YOURSELF.
 
+Plus, I don't have any server or other computer for me to test this thing, so you know where to find me for any issues.
+
+And, I would only deal with proper use with wrong outcome.
+
+You use it the wrong way and want me to handle that? You can do it yourself, don't bother me.
+
+And about self build.
+
+```bash
+    cargo build --release
+```
+
+then find your compiled file at target/release/ssh-cli.
+
+
 # Modules
 
 `config`: Handles configuration management and entry encoding.
@@ -45,7 +60,7 @@ This is the most complicated method of all the methods.
 If you want to auth with password:
 
 ```bash
-ssh_cli add myserver 192.168.1.10 user --password mypass --auth password
+ssh_cli add myserver 192.168.1.10 user password --password mypass
 ```
 
 
@@ -53,7 +68,7 @@ ssh_cli add myserver 192.168.1.10 user --password mypass --auth password
 If you want to use RSA without password
 
 ```bash
-ssh_cli add myserver 192.168.1.10 user --rsa myrsa --auth rsa
+ssh_cli add myserver 192.168.1.10 user rsa --rsa myrsa
 ```
 
 
@@ -61,20 +76,20 @@ ssh_cli add myserver 192.168.1.10 user --rsa myrsa --auth rsa
 If you want to use both
 
 ```bash
-ssh_cli add myserver 192.168.1.10 user --password mypass --rsa myrsa --auth both
+ssh_cli add myserver 192.168.1.10 user both --password mypass --rsa myrsa
 ```
 
 
 
 
 
-`remove`: Remove an SSH entry by name.
+`remove`: Remove an SSH entry by name. Not revcoverable.
 
 ```bash
 Ssh_cli remove myserver
 ```
 
-`list`: List all stored SSH entries.
+`list`: List all stored SSH entries. Will not list you any password.
 
 ```bash
 ssh_cli list
@@ -92,19 +107,21 @@ ssh_cli connect myserver
 ssh_cli export backup.json
 ```
 
-`import`: Import configuration from a specified file path.
+`import`: Import configuration from a specified file path. And maybe it will only import, not add.
+
+Use it wisely.
 
 ```bash
 ssh_cli import backup.json
 ```
 
-`sync-send`: Send the configuration to a target IP for synchronization.
+`sync-send`: Send the configuration to a target IP for synchronization. NOT TESTED.
 
 ```bash
 ssh_cli sync-send 192.168.1.20
 ```
 
-`sync-recv`: Receive configuration from another device (blocks until received).
+`sync-recv`: Receive configuration from another device (blocks until received). NOT TESTED.
 
 ```bash
 ssh_cli sync-recv
